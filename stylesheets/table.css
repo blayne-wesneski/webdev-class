@@ -1,0 +1,146 @@
+.tg {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.tg td {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.tg th {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.tg .tg-aalj {
+    background-color: #F8A102;
+    border-color: inherit;
+    text-align: center;
+    vertical-align: top
+}
+
+.tg .tg-baqh {
+    text-align: center;
+    vertical-align: top
+}
+
+.tg .tg-ccfw {
+    background-color: #CC9CFF;
+    text-align: center;
+    vertical-align: top
+}
+
+.tg .tg-3oug {
+    background-color: #fd6864;
+    text-align: center;
+    vertical-align: top
+}
+
+.tg .tg-c3ow {
+    border-color: inherit;
+    text-align: center;
+    vertical-align: top
+}
+
+.tg .tg-fb1t {
+    background-color: #34CDF9;
+    text-align: center;
+    vertical-align: top
+}
+
+.tg .tg-0pky {
+    border-color: inherit;
+    text-align: left;
+    vertical-align: top
+}
+
+.tg .tg-0lax {
+    text-align: left;
+    vertical-align: top
+}
+
+.tg .tg-a3pa {
+    background-color: #F8A102;
+    text-align: center;
+    vertical-align: top
+}
+
+.tg .tg-k3lo {
+    background-color: #34ff34;
+    text-align: center;
+    vertical-align: top
+}
+
+.tg .tg-itz0 {
+    background-color: #34FF34;
+    text-align: center;
+    vertical-align: top
+}
+
+.tg .tg-fvov {
+    background-color: #34cdf9;
+    text-align: center;
+    vertical-align: top
+}
+
+.tg .tg-sh07 {
+    background-color: #cbcefb;
+    text-align: center;
+    vertical-align: top
+}
+
+.tg .tg-ku8n {
+    background-color: #CBCEFB;
+    text-align: center;
+    vertical-align: top
+}
+
+.tg .tg-apku {
+    background-color: #f8a102;
+    text-align: center;
+    vertical-align: top
+}
+
+.tg .tg-6qw1 {
+    background-color: #c0c0c0;
+    text-align: center;
+    vertical-align: top
+}
+
+.tg .tg-hh5w {
+    background-color: #cc9cff;
+    text-align: center;
+    vertical-align: top
+}
+
+.tg .tg-c7wh {
+    background-color: #C0C0C0;
+    text-align: center;
+    vertical-align: top
+}
+
+.tg .tg-wos8 {
+    background-color: #FD6864;
+    text-align: center;
+    vertical-align: top
+}
+
+.table {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 60px;
+}

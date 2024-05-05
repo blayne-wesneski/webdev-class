@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blayne Wesneski</title>
+
+    <!-- Import Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!--Import Stylesheets-->
+    <link rel="stylesheet" href="/stylesheets/main.css">
+
+    <!--Import Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Space+Grotesk&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm">
+        <a class="navbar-brand" href="/index.html">Webdev Class</a>
+        <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
+            data-bs-target="#main-navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-navigation">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/index.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/activity_two.html">Activtity Two</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/forms.html">HTML Forms</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/js_fetch.html">JS Fetch</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/calculator.html">Relic Calculator</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/final-disclaimer.html">Final Project</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+                <img src="/images/axi_b7_relic.f2fcd9189f664b0f2ae7d5bb3f618fa3.png"
+                    class="d-block mx-lg-auto img-fluid" alt="A picture of Radiant Axi Relic from Warframe" width="400"
+                    height="400" loading="lazy" style="border-radius: 50%;">
+            </div>
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">Relic Odds Calculator for Warframe</h1>
+                <p class="lead">This calculator can be used to calculate the odds of recieveing a specific item from a
+                    Warframe relic depending on item rarity and relic refinement. Calculation breaks with more than 1
+                    type of relic because I am bad at math :(</p>
+                <p>Written in vanilla JS.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="features_background">
+        <div class="container features">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <h3 class="feature-title">Relics & Rarity</h3>
+                    <label for="intact">Intact</label>
+                    <input type="number" placeholder="0" id="intact" value="0">
+                    <br>
+                    <label for="exceptional">Exceptional</label>
+                    <input type="number" placeholder="0" id="exceptional" value="0">
+                    <br>
+                    <label for="flawless">Flawless</label>
+                    <input type="number" placeholder="0" id="flawless" value="0">
+                    <br>
+                    <label for="radiant">Radiant</label>
+                    <input type="number" placeholder="0" id="radiant" value="0">
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <h3 class="feature-title">Item Rarity</h3>
+                    <input type="radio" id="common" name="itemRarity" value="common">
+                    <label for="common">Common</label>
+                    <br>
+                    <input type="radio" id="uncommon" name="itemRarity" value="uncommon">
+                    <label for="uncommon">Uncommon</label>
+                    <br>
+                    <input type="radio" id="rare" name="itemRarity" value="rare">
+                    <label for="rare">Rare</label>
+                </div>
+
+
+
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <h3 class="feature-title">Odds of Getting any item in rarity category</h3>
+                    <p id="odds_display">0%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        let odds = {
+            intact: {
+                common: 0.76,
+                uncommon: 0.22,
+                rare: 0.02,
+            },
+            exceptional: {
+                common: 0.7,
+                uncommon: 0.26,
+                rare: 0.04,
+            },
+            flawless: {
+                common: 0.6,
+                uncommon: 0.34,
+                rare: 0.06,
+            },
+            radiant: {
+                common: 0.5,
+                uncommon: 0.4,
+                rare: 0.1,
+            }
+        }
+
+        let percentage = 0;
+        let finalOdds = 0;
+
+        function calculateOdds() {
+            // Get input values
+            const intactValue = document.getElementById("intact").value;
+            const exceptionalValue = document.getElementById("exceptional").value;
+            const flawlessValue = document.getElementById("flawless").value;
+            const radiantValue = document.getElementById("radiant").value;
+            const rarityValue = String(document.querySelector('input[name="itemRarity"]:checked').value);
+
+
+            // Calculate complement probability
+            const complementProbabilityIntact = 1 - odds["intact"][rarityValue];
+            const complementProbabilityExceptional = 1 - odds["exceptional"][rarityValue];
+            const complementProbabilityFlawless = 1 - odds["flawless"][rarityValue];
+            const complementProbabilityRadiant = 1 - odds["radiant"][rarityValue];
+
+            // Calulate probability of not getting an item in that category
+            const probabilityIntact = 1 - Math.pow(complementProbabilityIntact, intactValue);
+            const probabilityExceptional = 1 - Math.pow(complementProbabilityExceptional, exceptionalValue);
+            const probabilityFlawless = 1 - Math.pow(complementProbabilityFlawless, flawlessValue);
+            const probabilityRadiant = 1 - Math.pow(complementProbabilityRadiant, radiantValue);
+
+            finalOdds = probabilityIntact + probabilityExceptional + probabilityFlawless + probabilityRadiant;
+
+            let percentage = finalOdds * 100;
+
+            console.log(percentage);
+            document.getElementById("odds_display").innerHTML = percentage + "%";
+        }
+
+
+        // Call calculateOdds whenever the form is updated
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', calculateOdds);
+        });
+    </script>
+
+    <footer class="page-footer">
+        <div class="footer-copyright text-center">© 2024 Copyright: Blayne Wesneski</div>
+    </footer>
+</body>
+
+</html>

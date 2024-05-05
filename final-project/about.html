@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Craft Co.</title>
+
+    <!-- Import Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!--Import Stylesheets-->
+    <link rel="stylesheet" href="/stylesheets/main.css">
+
+    <!--Import Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Space+Grotesk&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-sm">
+        <a class="navbar-brand" href="/final-project/index.php">Custom Craft Co.</a>
+        <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
+            data-bs-target="#main-navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-navigation">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/final-project/index.php">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/final-project/contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/final-project/about.html">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1 class="display-5 fw-bold lh-1 mb-3" style="text-align: center; padding-top: 50px;"> Custom Craft Co.</h1>
+    <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-lg-6" style="margin: auto; width: 50em; height: auto;">
+                <p class="lead">At Custom Craft Co., we believe that every individual has a unique vision, and we're
+                    here to help you bring that vision to life. We specialize in turning your creative designs into
+                    high-quality, custom merchandise that you'll love.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="features_background">
+        <div class="container features">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <h3 class="feature-title">Our Mission</h3>
+                    <p>Our mission is simple: to empower creativity. We strive to provide a platform where anyone can
+                        easily create and purchase custom merchandise, whether it's for personal use, business branding,
+                        events, or gifting.</p>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <h3 class="feature-title">Why Choose Custom Craft Co.?</h3>
+                    <ul>
+                        <li><strong>Customization:</strong> We offer a wide range of customizable products, including
+                            apparel, accessories, home decor, and more. Whatever you can imagine, we can create.
+                            And if you don't see it in our online catalogue, reach out to us and we can work out a
+                            custom order.</li>
+                        <li><strong>Quality:</strong> We use only the finest materials and printing techniques to ensure
+                            that your custom merchandise looks and feels exceptional.</li>
+                        <li><strong>Fast Turnaround:</strong> We understand that you're excited to receive your custom
+                            merchandise, which is why we strive to deliver orders quickly without compromising on
+                            quality.</li>
+                        <li><strong>Personalized Service:</strong> We are here to help you. It's your merchandise, so we
+                            will maintain constant contact throughout the entire design process to ensure the end result
+                            comes out just as you want it.</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <h3 class="feature-title">How It Works</h3>
+                    <ul>
+                        <li><strong>Contact Us:</strong> Reach out to us and we will dicuss the product you wish to
+                            order.</li>
+                        <li><strong>Send Us Your Design:</strong> Send your design to us via email once in contact,
+                            designs@customcraft.co, and we will create mockup product images for you.</li>
+                        <li><strong>Customize Your Product:</strong> Communicate with our team to make tweaks and
+                            changes to better suit what you desire for the final product.</li>
+                        <li><strong>Place Your Order:</strong> Once you're satisfied with your design, simply place your
+                            order and let us handle the rest.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-12">
+                    <h6 class="text-uppercase font-weight-bold">Ready to buy?</h6>
+                    <p>Send us a message using this form and we will be in touch! Or if you prefer, you can
+                        see all of our contact options on our <a href="/contact">Contact Us!</a> page!</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <h3 class="feature-title" style="color: white;">Get in Touch!</h3>
+                    <form method="POST"
+                        onsubmit="return validateForm()">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email Address" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="4" name="text" required></textarea>
+                        </div>
+                        <input type="submit" class="btn btn-secondary btn-block" value="Send">
+                    </form>
+
+                    <script>
+                        function validateForm() {
+                            var name = document.getElementById("name").value;
+                            var email = document.getElementById("email").value;
+                            var text = document.getElementById("text").value;
+
+                            cleanedName = nameInput.value.replace(/[^A-Za-z\s]/g, ''); // Keep only letters and spaces
+                            cleanedEmail = emailInput.value.replace(/[^\w.@]/g, ''); // Keep only letters, digits, dots, and @
+                            cleanedText = textInput.value.replace(/[^\w\s.,!?]/g, ''); // Keep only letters, digits, spaces, and common punctuation
+
+                            document.getElementById("name").value = cleanedName;
+                            document.getElementById("email").value = cleanedEmail;
+                            document.getElementById("text").value = cleanedText;
+
+                            return true;
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright text-center">© 2024 Copyright: Blayne Wesneski</div>
+        <div class="text-center"><a href="/index.html">Return to main landing page</a></div>
+    </footer>
+</body>
+
+</html>

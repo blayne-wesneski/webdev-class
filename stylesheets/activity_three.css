@@ -1,0 +1,29 @@
+.form_headings {
+    text-align: center;
+}
+
+.form_section_headings {
+    display: block;
+    width: 60%;
+    background-color: rgb(222, 234, 246);
+    margin: auto;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.form_section_heading_text {
+    font-weight: bold;
+    margin: auto;
+}
+
+.form_section {
+    display: block;
+    margin: auto;
+    width: 60%;
+    text-align: left;
+    justify-content: left;
+}
+
+.form_section_text {
+    font-weight: bold;
+}
